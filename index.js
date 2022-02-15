@@ -86,7 +86,7 @@ async function registerSlashCommands(dir) {
     });
 };
 registerSlashCommands('./commands/');
-client.login(process.env.token);
+client.login(process.env.TOKEN);
 client.fetchApplication().then((application) => {
     let owners = application.owner;
     if(owners instanceof Team) {owners = owners.members.map(user => user.id)} else {owners = owners.id};
